@@ -5,4 +5,5 @@ LABEL Description="Keycloak for the candig project"
 # This run in standalone mode. Might not be ideal in the long run...
 EXPOSE 9990 9993 8009 8080 8443 4712 4713
 COPY keycloak-3.4.3.Final /opt/keycloak-3.4.3.Final
-ENTRYPOINT /opt/keycloak-3.4.3.Final/bin/standalone.sh
+COPY startup.sh /usr/local/bin/startup.sh
+ENTRYPOINT /usr/local/bin/startup.sh
